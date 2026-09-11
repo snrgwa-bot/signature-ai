@@ -66,3 +66,25 @@ footer .wrap{display:flex; flex-wrap:wrap; gap:14px; justify-content:space-betwe
 footer a{color:var(--graphite); margin-right:16px; font-weight:600}
 footer a:hover{color:var(--ink)}
 .muted{color:var(--graphite); font-size:13px; text-align:center; margin-top:10px}
+
+/* Large displays: the shell was pinned at 920px, which on a 2560px monitor
+   reads as a narrow column adrift in empty space. Widen the shell and lift the
+   base body size so type, spacing and cards grow together — widening alone
+   just stretches the gaps. The legal/content pages keep their own measure so
+   line length stays readable however wide the window gets. */
+@media (min-width:1500px){
+  :root{ --maxw:1280px }
+  body{ font-size:17px }
+  .hero{ padding:104px 0 76px }
+  .hero p{ max-width:720px }
+  .sub{ max-width:640px }
+  .prices{ max-width:920px }
+  .page{ max-width:76ch; margin-left:auto; margin-right:auto; padding:44px }
+}
+@media (min-width:2000px){
+  :root{ --maxw:1500px }
+  body{ font-size:18px }
+  .hero p{ max-width:780px }
+  .sub{ max-width:680px }
+  .prices{ max-width:1040px }
+}
